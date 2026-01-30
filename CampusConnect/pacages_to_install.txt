@@ -1,0 +1,5 @@
+npm install lucide-react
+
+npm install @fontsource-variable/inter
+
+npm install react-router-dom

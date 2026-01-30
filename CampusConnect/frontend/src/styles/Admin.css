@@ -1,0 +1,134 @@
+.admin-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Inter Variable', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.admin-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+
+.glow-accent, .glow-accent-2 {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffff00 0%, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.15;
+  z-index: 1;
+}
+.glow-accent  { width: 600px; height: 600px; top: -10%; left: -10%; animation: float 20s ease-in-out infinite; }
+.glow-accent-2 { width: 800px; height: 800px; bottom: -20%; right: -15%; animation: float 25s ease-in-out infinite reverse; }
+
+.admin-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+
+.admin-container h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #fff 0%, #ff0 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  color: #ddd;
+  margin-bottom: 4rem;
+}
+
+.admin-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 500px;
+  margin: 0 auto 4rem;
+}
+
+.admin-actions .btn-primary {
+  padding: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.logout-btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+}
+
+/* Make admin logout button red with white text */
+.logout-btn {
+  background: #ff3b3b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+}
+
+.logout-btn:hover {
+  background: #e03232;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0,0) rotate(0deg); }
+  50% { transform: translate(80px,-80px) rotate(8deg); }
+}
+
+/* New admin layout */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.admin-sidebar {
+  background: rgba(20,20,20,0.9);
+  border: 1px solid rgba(255,255,0,0.07);
+  padding: 1.6rem;
+  border-radius: 12px;
+  position: relative;
+}
+.admin-sidebar-header h2 { margin: 0 0 6px 0; font-size: 1.6rem; }
+.admin-sidebar .muted { color: #ddd; font-size: 0.9rem; margin-bottom: 1rem; }
+.admin-nav { display:flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.2rem; }
+.admin-nav button { text-align: left; padding: 0.9rem 1rem; border-radius: 8px; background: transparent; border: none; color: #fff; cursor: pointer; font-weight: 700; }
+.admin-nav button.active { background: rgba(255,255,0,0.08); color: #ffff00; }
+.admin-sidebar-foot { display:flex; gap:0.8rem; flex-direction: column; }
+
+.admin-main { background: rgba(14,14,14,0.9); padding: 1.6rem; border-radius: 12px; border: 1px solid rgba(255,255,0,0.05); }
+.admin-main h1 { margin-top: 0; font-size: 2.2rem; }
+.overview-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.2rem; }
+.overview-card { background: rgba(30,30,30,0.8); padding:1.2rem; border-radius: 10px; border:1px solid rgba(255,255,0,0.06); }
+.overview-card h3 { margin:0 0 .6rem 0; color:#fff; }
+
+.users-table { width:100%; border-collapse: collapse; margin-top: 1rem; background: transparent; }
+.users-table th, .users-table td { padding: 0.9rem 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.04); text-align: left; }
+.users-table th { color: #ffff99; }
+.users-table td button { padding: 0.45rem 0.7rem; border-radius: 8px; }
+
+.placeholder-panel { padding: 1rem 0; }
+
+@media (max-width: 900px) {
+  .admin-grid { grid-template-columns: 1fr; }
+  .overview-cards { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .overview-cards { grid-template-columns: 1fr; }
+}
